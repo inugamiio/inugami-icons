@@ -1,8 +1,9 @@
 {
   "name": "inugami-icons",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
+    "extract" : "node icon-extractor.js",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

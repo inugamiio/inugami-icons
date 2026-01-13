@@ -50,3 +50,4 @@ pom.xml.versionsBackup
 /legacy/__inugami/
 /dist/
 /.angular/
+/tmp/
