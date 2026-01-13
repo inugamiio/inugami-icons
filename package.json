@@ -20,7 +20,7 @@
       }
     ]
   },
-  "private": true,
+  "private": false,
   "packageManager": "npm@11.6.2",
   "dependencies": {
     "@angular/common": "^21.0.0",
