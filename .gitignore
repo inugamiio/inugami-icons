@@ -51,3 +51,4 @@ pom.xml.versionsBackup
 /dist/
 /.angular/
 /tmp/
+/projects/inugami-icons/src/lib/inugami-icons.default.ts
