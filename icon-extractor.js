@@ -22,6 +22,16 @@ const INKSCAPE_ATTRIBUTES = [
     'sodipodi:nodetypes'
 ];
 
+const INKSCAPE_ATTRIBUTES_CHILDREN = [
+    'id',
+    'inkscape:groupmode',
+    'inkscape:insensitive',
+    'inkscape:label',
+    'inkscape:nodetypes',
+    'inkscape:connector-curvature',
+    'sodipodi:nodetypes'
+];
+
 // ============================================================================
 // FUNCTIONS
 // ============================================================================
@@ -72,7 +82,7 @@ function parseSvg(dom) {
             continue;
         }
         
-        suppressInkscapeAttributes(child);
+        suppressInkscapeAttributes(child, true);
         child.setAttribute('class', id);
         const svgContent = renderSvg(child);
         console.log(id);
@@ -85,14 +95,14 @@ function parseSvg(dom) {
     return result;
 }
 
-function suppressInkscapeAttributes(node) {
+function suppressInkscapeAttributes(node, parent) {
     if (node) {
-        for (attr of INKSCAPE_ATTRIBUTES) {
+        for (attr of (parent?INKSCAPE_ATTRIBUTES:INKSCAPE_ATTRIBUTES_CHILDREN)) {
             node.removeAttribute(attr);
 
             if (node.children) {
                 for (childNode of node.children) {
-                    suppressInkscapeAttributes(childNode);
+                    suppressInkscapeAttributes(childNode, false);
                 }
             }
         }
