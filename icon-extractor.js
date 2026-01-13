@@ -162,14 +162,7 @@ function writeSvgIcon(icons, fileInfo) {
             'content' : '${fileInfo.svgPrefix}${icons[key].icon}</svg>'
         }
 `
-        );
-        
-        /*
-        const content = `\t${key} : \`${icons[key].icon}\` ${separator}`;
-        const iconSvg = `\t${key} : \``+ fileInfo.svgPrefix + "${" +fileInfo.svgName+"."+key+"}</svg>`" 
-        */
-
-        
+        );        
     }
     result.push(']')
     return result.join('\n');
