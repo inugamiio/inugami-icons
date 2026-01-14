@@ -82,7 +82,7 @@ function parseSvg(dom) {
             continue;
         }
         
-        suppressInkscapeAttributes(child, true);
+        suppressInkscapeAttributes(child, 0);
         child.setAttribute('class', id);
         const svgContent = renderSvg(child);
         console.log(id);
@@ -95,14 +95,14 @@ function parseSvg(dom) {
     return result;
 }
 
-function suppressInkscapeAttributes(node, parent) {
+function suppressInkscapeAttributes(node, level) {
     if (node) {
-        for (attr of (parent?INKSCAPE_ATTRIBUTES:INKSCAPE_ATTRIBUTES_CHILDREN)) {
+        for (attr of (level<=1?INKSCAPE_ATTRIBUTES:INKSCAPE_ATTRIBUTES_CHILDREN)) {
             node.removeAttribute(attr);
 
             if (node.children) {
                 for (childNode of node.children) {
-                    suppressInkscapeAttributes(childNode, false);
+                    suppressInkscapeAttributes(childNode, level+1);
                 }
             }
         }
