@@ -1,6 +1,13 @@
 {
   "name": "inugami-icons",
-  "version": "0.0.8",
+  "version": "0.0.9",
+  "description": "Inugami project icon library",
+  "keywords": ["inugami", "icons", "angular", "svg"],
+  "homepage": "https://inugami.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/inugamiio/inugami-icons.git"
+  },
   "peerDependencies": {
     "@angular/common": "^21.0.0",
     "@angular/core": "^21.0.0"
