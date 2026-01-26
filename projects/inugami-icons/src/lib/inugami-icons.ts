@@ -21,6 +21,7 @@ export class InuIcon {
   private sanitizer = inject(DomSanitizer);
 
   icon = input<string | null>(null);
+  defaultIcon = input<string | null>(null);
   styleclass = input<string | null>(null);
   size = input<number | null>(1);
 
@@ -34,7 +35,12 @@ export class InuIcon {
   constructor() {
     effect(() => {
       const name = this.icon();
-      const content = InugamiIconsUtils.getIcon(name);
+      let content = InugamiIconsUtils.getIcon(name);
+      const defaultIcon = this.defaultIcon();
+      if(!content && defaultIcon){
+        content = InugamiIconsUtils.getIcon(defaultIcon);
+      }
+
       const iconContent = content ? this.sanitizer.bypassSecurityTrustHtml(content) : null;
       this.hasContent.set(iconContent != undefined && iconContent != null);
       this._content.set(iconContent);

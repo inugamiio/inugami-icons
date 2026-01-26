@@ -1,6 +1,14 @@
 {
   "name": "inugami-icons",
-  "version": "0.0.8",
+  "version": "0.0.9",
+  "license": "GPL-3.0-only",
+  "description": "Inugami project icon library",
+  "keywords": ["inugami", "icons", "angular", "svg"],
+  "homepage": "https://inugami.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/inugamiio/inugami-icons.git"
+  },
   "scripts": {
     "ng": "ng",
     "extract" : "node icon-extractor.js",
