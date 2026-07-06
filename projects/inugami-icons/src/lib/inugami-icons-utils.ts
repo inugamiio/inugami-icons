@@ -1,11 +1,12 @@
-import { IconDefinition } from "./inugami-icons.model";
+import {IconDefinition, SwitzerlandCanton} from "./inugami-icons.model";
 
-const ICONS: any = {};
+const ICONS: any                               = {};
+
 
 export class InugamiIconsUtils {
 
-    public static getIcon(name?: string|null): string | undefined {
-        if(!name){
+    public static getIcon(name?: string | null): string | undefined {
+        if (!name) {
             return undefined;
         }
         const rawData = ICONS[name] as any;
@@ -20,7 +21,7 @@ export class InugamiIconsUtils {
     }
 
     public static getAllIcons(): string[] {
-        const result =Object.keys(ICONS);
+        const result = Object.keys(ICONS);
         return result;
     }
 }
