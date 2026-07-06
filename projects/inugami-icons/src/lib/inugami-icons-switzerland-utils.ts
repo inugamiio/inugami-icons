@@ -234,7 +234,7 @@ export const SWITZERLAND_CANTONS: SwitzerlandCanton[] = [
 ];
 
 
-export class InugamiIconsUtils {
+export class InugamiIconsSwitzerlandUtils {
     public static getCanton(code: string): SwitzerlandCanton {
         const currentCode = code.toLowerCase();
         let result        = SWITZERLAND_CANTONS.find(c => c.code == currentCode);
